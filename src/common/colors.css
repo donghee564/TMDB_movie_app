@@ -1,0 +1,11 @@
+@value makerRed: #e50914;
+@value makerGrey: #757575;
+@value makerWhite: #ffffff;
+@value makerDarkGrey: #303030;
+@value makerBlack: #111;
+@value makerLightGrey: #acabab;
+
+@value makerPrimary: #0d253f;
+@value makerSecondary: #01b4e4;
+@value makerTertiary: #90cea1;
+@value makerGradient: linear-gradient(to right, #90cea1, #01b4e4);

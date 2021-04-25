@@ -1,0 +1,73 @@
+@value makWhitemakerPrimary, makerSecondary, makerLightGrey, makerDarkGrey from "../../common/colors.css";
+
+.movie {
+  width: 200px;
+  margin-right: 20px;
+  background: #1a1a1a;
+}
+
+.textBox {
+  width: 100%;
+  padding: 20px 10px 10px;
+}
+
+.rate {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  height: 50px;
+  margin-top: 10px;
+  font-weight: lighter;
+  font-size: 1.1em;
+}
+
+.date {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.releaseDate {
+  font-size: 1.1em;
+  font-weight: lighter;
+  color: makerLightGrey;
+}
+
+.numbers {
+  margin-left: 5px;
+  display: inline-block;
+  font-weight: lighter;
+  font-size: 0.9em;
+  color: makerLightGrey;
+}
+
+.myList,
+.watchTrailer {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 8px 0;
+  width: 100%;
+  border-radius: 5px;
+  color: makerWhite;
+  font-weight: lighter;
+  transition: all 0.35s ease-in;
+}
+
+.myList {
+  background-color: #ffffff14;
+}
+
+.myList:hover,
+.watchTrailer:hover {
+  background-color: #ffffff4d;
+  color: #fff;
+}

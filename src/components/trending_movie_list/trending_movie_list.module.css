@@ -1,0 +1,58 @@
+@value makerLightGrey from "../../common/colors.css";
+
+.movies {
+  width: 1300px;
+  position: relative;
+}
+
+.moviesWrap {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.movieList {
+  width: 400%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.leftBtn,
+.rightBtn {
+  all: unset;
+  padding: 22px 12px;
+  background-color: #12121273;
+  color: makerLightGrey;
+  border-radius: 5px;
+  border: 1px solid makerLightGrey;
+}
+
+.leftBtn {
+  position: absolute;
+  left: -2%;
+  top: 40%;
+}
+
+.rightBtn {
+  position: absolute;
+  right: -2%;
+  top: 40%;
+}
+
+.leftBtn:hover,
+.rightBtn:hover {
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.322);
+  border-radius: 5px;
+}
