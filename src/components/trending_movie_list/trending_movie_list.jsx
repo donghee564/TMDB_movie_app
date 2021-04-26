@@ -1,14 +1,32 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TrendingMovieItem from "../trending_movie_item/trending_movie_item";
 import styles from "./trending_movie_list.module.css";
 import { ChevronCompactLeft, ChevronCompactRight } from "react-bootstrap-icons";
 
 const TrendingMovieList = ({ movies }) => {
+  const [slideIndex, setSlideIndex] = useState(0);
   const slideRef = useRef();
+  const slide_length = 3;
+  const slide_width = 1300;
 
-  const handleClick = () => {
-    console.log("wefwe");
+  const nextSlide = () => {
+    slideIndex >= slide_length
+      ? setSlideIndex(0)
+      : setSlideIndex(slideIndex + 1);
   };
+
+  const prevSlide = () => {
+    slideIndex <= 0
+      ? setSlideIndex(slide_length)
+      : setSlideIndex(slideIndex - 1);
+  };
+
+  useEffect(() => {
+    slideRef.current.style.transition = `all 0.5s`;
+    slideRef.current.style.transform = `translateX(${
+      -slide_width * slideIndex
+    }px)`;
+  }, [slideIndex]);
 
   return (
     <section className={styles.movies}>
@@ -21,10 +39,10 @@ const TrendingMovieList = ({ movies }) => {
         </ul>
       </div>
       <button className={styles.leftBtn}>
-        <ChevronCompactLeft size={35} />
+        <ChevronCompactLeft onClick={prevSlide} size={35} />
       </button>
       <button className={styles.rightBtn}>
-        <ChevronCompactRight onClick={handleClick} size={35} />
+        <ChevronCompactRight onClick={nextSlide} size={35} />
       </button>
     </section>
   );

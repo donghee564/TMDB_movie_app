@@ -1,4 +1,4 @@
-@value makWhitemakerPrimary, makerSecondary, makerLightGrey, makerDarkGrey from "../../common/colors.css";
+@value makerBlack, makWhitemakerPrimary, makerSecondary, makerLightGrey, makerDarkGrey from "../../common/colors.css";
 
 .movie {
   width: 200px;
@@ -30,12 +30,6 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-}
-
-.releaseDate {
-  font-size: 1.1em;
-  font-weight: lighter;
-  color: makerLightGrey;
 }
 
 .numbers {
@@ -70,4 +64,120 @@
 .watchTrailer:hover {
   background-color: #ffffff4d;
   color: #fff;
+}
+
+/* 포스터 이미지 호버 이펙트 */
+.imgBox {
+  background-color: makerBlack;
+  position: relative;
+}
+
+.poster {
+  position: relative;
+}
+
+.circle {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  text-align: center;
+}
+
+.circle::before,
+.circle::after {
+  border: 2px solid makerLightGrey;
+  border-right-color: transparent;
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: all 0.35s ease-in-out;
+  transition-delay: 0.3s;
+}
+
+.circle::before {
+  transform: rotate(45deg);
+}
+
+.circle::after {
+  transform: rotate(-45deg);
+}
+
+.caption {
+  display: block;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.addMyList {
+  position: absolute;
+  font-weight: lighter;
+  font-size: 1.2em;
+  top: 13px;
+  left: 18px;
+  opacity: 0;
+  transition: all 0.35s;
+  transform: translateX(-10%);
+}
+
+.releaseDate,
+.posterTitle {
+  opacity: 0;
+  transition: all 0.35s;
+  margin-left: 2%;
+}
+
+.releaseDate {
+  font-weight: lighter;
+  color: makerLightGrey;
+}
+
+.posterTitle {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.3em;
+}
+
+.imgBox:hover .caption {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.imgBox:hover .circle {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.imgBox:hover .circle::before,
+.imgBox:hover .circle::after {
+  transform: rotate(0deg);
+  transition-delay: 0s;
+}
+
+.imgBox:hover .addMyList {
+  opacity: 1;
+  transition-delay: 0.3s;
+  transform: translateX(0);
+}
+
+.imgBox:hover .releaseDate,
+.imgBox:hover .posterTitle {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+.imgBox:hover .plus {
+  opacity: 0;
+  transition-delay: 0s;
 }
