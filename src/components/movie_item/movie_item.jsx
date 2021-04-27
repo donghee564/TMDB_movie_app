@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./trending_movie_item.module.css";
+import styles from "./movie_item.module.css";
 import { StarFill, Heart, Plus, Play } from "react-bootstrap-icons";
 
-const TrendingMovieItem = ({ movie }) => {
+const MovieItem = ({ movie }) => {
   const title = movie.title === undefined ? movie.name : movie.title;
   const release_date =
     movie.release_date === undefined
@@ -53,4 +53,4 @@ const TrendingMovieItem = ({ movie }) => {
   );
 };
 
-export default TrendingMovieItem;
+export default MovieItem;

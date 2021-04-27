@@ -1,0 +1,39 @@
+@value makerTertiary, makerWhite, makerPrimary, makerGradient from "../../common/colors.css";
+
+.timeSelect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 37px;
+  border-radius: 30px;
+  background-color: makerPrimary;
+}
+
+.time {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.time.selected {
+  color: makerPrimary;
+  background: makerGradient;
+}
+
+.text {
+  font-weight: bold;
+  background: makerGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text.selected {
+  background: makerWhite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

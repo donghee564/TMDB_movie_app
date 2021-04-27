@@ -1,7 +1,7 @@
 @value makerLightGrey from "../../common/colors.css";
 
 .movies {
-  width: 1300px;
+  width: 1320px;
   position: relative;
 }
 
@@ -10,11 +10,6 @@
   height: 600px;
   overflow: hidden;
   position: relative;
-}
-
-.title {
-  text-align: center;
-  margin-top: 40px;
 }
 
 .movieList {

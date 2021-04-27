@@ -1,25 +1,31 @@
 import { useEffect, useState } from "react";
 import styles from "./app.module.css";
-import Header from "./components/header/header";
 import Nav from "./components/nav/nav";
-import TrendingMovieList from "./components/trending_movie_list/trending_movie_list";
+import Trending from "./components/trending/trending";
 
 function App({ tmdb }) {
   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [trendingTVShows, setTrendingTVShows] = useState([]);
 
   useEffect(() => {
     tmdb
-      .trendingMovies() //
+      .trending("movie") //
       .then((result) => {
         setTrendingMovies(result);
+      });
+
+    tmdb
+      .trending("tv") //
+      .then((result) => {
+        setTrendingTVShows(result);
       });
   }, [tmdb]);
 
   return (
     <div className={styles.app}>
       <Nav />
-      {/* <Header /> */}
-      <TrendingMovieList movies={trendingMovies} />
+      <Trending list={trendingMovies} />
+      <Trending list={trendingTVShows} />
     </div>
   );
 }
