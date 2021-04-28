@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import MovieItem from "../movie_item/movie_item";
 import styles from "./movie_list.module.css";
 import { ChevronCompactLeft, ChevronCompactRight } from "react-bootstrap-icons";
@@ -41,14 +41,14 @@ const TrendingMovieList = ({ movies }) => {
           ))}
         </ul>
       </div>
-      <button className={styles.leftBtn}>
-        <ChevronCompactLeft onClick={prevSlide} size={35} />
+      <button className={styles.leftBtn} onClick={prevSlide}>
+        <ChevronCompactLeft size={35} />
       </button>
-      <button className={styles.rightBtn}>
-        <ChevronCompactRight onClick={nextSlide} size={35} />
+      <button className={styles.rightBtn} onClick={nextSlide}>
+        <ChevronCompactRight size={35} />
       </button>
     </div>
   );
 };
 
-export default TrendingMovieList;
+export default memo(TrendingMovieList);

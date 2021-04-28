@@ -5,9 +5,9 @@ class Tmdb {
     this.key = key;
   }
 
-  async trending(type) {
+  async trending(type, time) {
     const result = await axios.get(
-      `https://api.themoviedb.org/3/trending/${type}/day?api_key=${this.key}&time_window=week&language=ko-KR`
+      `https://api.themoviedb.org/3/trending/${type}/${time}?api_key=${this.key}&time_window=week&language=ko-KR`
     );
     return result.data.results;
   }

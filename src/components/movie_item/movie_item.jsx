@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./movie_item.module.css";
 import { StarFill, Heart, Plus, Play } from "react-bootstrap-icons";
 
@@ -53,4 +53,4 @@ const MovieItem = ({ movie }) => {
   );
 };
 
-export default MovieItem;
+export default memo(MovieItem);

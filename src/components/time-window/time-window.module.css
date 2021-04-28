@@ -8,9 +8,22 @@
   height: 37px;
   border-radius: 30px;
   background-color: makerPrimary;
+  position: relative;
+}
+
+.input {
+  opacity: 0;
+  position: absolute;
 }
 
 .time {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.checkMark {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -18,9 +31,10 @@
   width: 100%;
   height: 100%;
   border-radius: 30px;
+  transition: all 1s;
 }
 
-.time.selected {
+.input:checked ~ .checkMark {
   color: makerPrimary;
   background: makerGradient;
 }
@@ -32,7 +46,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.text.selected {
+.input:checked ~ .checkMark .text {
   background: makerWhite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
