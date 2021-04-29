@@ -13,10 +13,20 @@
   width: 1320px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.logoWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15%;
+  border: 0px solid white;
 }
 
 .footerBox {
-  width: 80%;
+  border: 0px solid white;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,14 +34,15 @@
 }
 
 .sns {
+  width: 100%;
+  margin-top: 20px;
   display: flex;
-  width: 30%;
   justify-content: space-between;
 }
 
 .menuBox {
   margin-top: 20px;
-  width: 60%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   font-size: 1.2em;

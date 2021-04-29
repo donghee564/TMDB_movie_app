@@ -12,40 +12,42 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.wrap}>
-        <img
-          className={styles.logo}
-          src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
-          alt="sqaure logo"
-        />
-
-        <div className={styles.footerBox}>
+        <div className={styles.logoWrap}>
+          <img
+            className={styles.logo}
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+            alt="sqaure logo"
+          />
           <ul className={styles.sns}>
             <li>
               <a href="https://www.facebook.com">
-                <Facebook size={35} />
+                <Facebook size={25} />
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com">
-                <Instagram size={35} />
+                <Instagram size={25} />
               </a>
             </li>
             <li>
               <a href="https://www.twitter.com">
-                <Twitter size={35} />
+                <Twitter size={25} />
               </a>
             </li>
             <li>
               <a href="https://www.twitch.com">
-                <Twitch size={35} />
+                <Twitch size={25} />
               </a>
             </li>
             <li>
               <a href="https://www.youtube.com">
-                <Youtube size={35} />
+                <Youtube size={25} />
               </a>
             </li>
           </ul>
+        </div>
+
+        <div className={styles.footerBox}>
           <ul className={styles.menuBox}>
             <li>
               안내
