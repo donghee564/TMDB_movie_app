@@ -14,7 +14,7 @@ const MovieItem = ({ movie }) => {
       <div className={styles.imgBox}>
         <img
           className={styles.poster}
-          src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
           alt="poster"
         />
         <div className={styles.caption}>

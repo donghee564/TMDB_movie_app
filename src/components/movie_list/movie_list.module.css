@@ -1,13 +1,13 @@
 @value makerLightGrey from "../../common/colors.css";
 
 .movies {
-  width: 1320px;
+  width: 1350px;
   position: relative;
 }
 
 .moviesWrap {
   width: 100%;
-  height: 600px;
+  height: 700px;
   overflow: hidden;
   position: relative;
 }

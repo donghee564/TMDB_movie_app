@@ -1,0 +1,41 @@
+@value makerLightGrey, makerDarkGrey from "../../common/colors.css";
+
+.searchedItem {
+  width: 45%;
+  margin: 0 20px 20px;
+  height: 450px;
+}
+
+.bgLayer {
+  width: 100%;
+  height: 100%;
+  background-color: #0d253fcb;
+  padding: 20px;
+  display: flex;
+}
+
+.poster {
+  width: 300px;
+}
+
+.textBox {
+  padding: 15px;
+  overflow: hidden;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.date {
+  font-weight: lighter;
+  font-size: 0.9em;
+  color: makerLightGrey;
+}
+
+.overview {
+  margin-top: 40px;
+  font-weight: lighter;
+  font-size: 0.75em;
+}

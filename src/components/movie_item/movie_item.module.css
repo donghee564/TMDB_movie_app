@@ -1,7 +1,7 @@
 @value makerBlack, makWhitemakerPrimary, makerSecondary, makerLightGrey, makerDarkGrey from "../../common/colors.css";
 
 .movie {
-  width: 200px;
+  width: 250px;
   margin: 0 10px;
   background: #1a1a1a;
 }
@@ -68,11 +68,12 @@
 
 /* 포스터 이미지 호버 이펙트 */
 .imgBox {
-  background-color: makerBlack;
+  background: #1a1a1a;
   position: relative;
 }
 
 .poster {
+  width: 250px;
   position: relative;
 }
 
@@ -117,7 +118,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 250px;
   height: 100%;
   overflow: hidden;
 }

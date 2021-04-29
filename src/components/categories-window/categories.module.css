@@ -1,0 +1,53 @@
+@value makerTertiary, makerWhite, makerPrimary, makerGradient from "../../common/colors.css";
+
+.typeSelect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 37px;
+  border-radius: 30px;
+  background-color: makerPrimary;
+  position: relative;
+}
+
+.input {
+  opacity: 0;
+  position: absolute;
+}
+
+.time {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.checkMark {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  transition: all 1s;
+}
+
+.input:checked ~ .checkMark {
+  color: makerPrimary;
+  background: makerGradient;
+}
+
+.text {
+  font-weight: bold;
+  background: makerGradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.input:checked ~ .checkMark .text {
+  background: makerWhite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

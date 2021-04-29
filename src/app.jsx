@@ -1,73 +1,38 @@
-import { useCallback, useEffect, useState } from "react";
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import { useState, useCallback } from "react/cjs/react.development";
 import styles from "./app.module.css";
 import Footer from "./components/footer/footer";
+import Home from "./components/home/home";
 import Nav from "./components/nav/nav";
-import Trailer from "./components/trailer/trailer";
-import Trending from "./components/trending/trending";
+import PageSearch from "./components/page_search/page_search";
 
 function App({ tmdb }) {
-  const [trendingMovies, setTrendingMovies] = useState([]); //영화리스트
-  const [trendingTVShows, setTrendingTVShows] = useState([]); //TV시리즈 리스트
-  const [timeMovie, setTimeMovie] = useState("day"); //영화 일간, 주간 시간선택
-  const [timeTV, setTimeTV] = useState("day"); //TV시리즈 일간, 주간 시간선택
+  const [searched, setSearched] = useState([]); //검색 결과
 
-  useEffect(() => {
-    tmdb
-      .trending("movie", timeMovie) //
-      .then((result) => {
-        setTrendingMovies(result);
-      });
-
-    tmdb
-      .trending("tv", timeTV) //
-      .then((result) => {
-        setTrendingTVShows(result);
-      });
-  }, [tmdb, timeMovie, timeTV]);
-
-  const handleMovieTimeChange = useCallback(
-    (event) => {
-      setTimeMovie(event.target.value);
+  const handleSearch = useCallback(
+    (query) => {
       tmdb
-        .trending("movie", timeMovie) //
+        .search("multi", query) //
         .then((result) => {
-          setTrendingMovies(result);
+          setSearched(result);
         });
     },
-    [tmdb, timeMovie]
-  );
-
-  const handleTvTimeChange = useCallback(
-    (event) => {
-      setTimeTV(event.target.value);
-      tmdb
-        .trending("tv", timeTV) //
-        .then((result) => {
-          setTrendingTVShows(result);
-        });
-    },
-    [tmdb, timeTV]
+    [tmdb]
   );
 
   return (
     <div className={styles.app}>
-      <Nav />
-      <Trending
-        list={trendingMovies}
-        title="영화"
-        label="1"
-        time={timeMovie}
-        handleTimeChange={handleMovieTimeChange}
-      />
-      <Trailer />
-      <Trending
-        list={trendingTVShows}
-        title="TV 시리즈"
-        label="2"
-        time={timeTV}
-        handleTimeChange={handleTvTimeChange}
-      />
-      <Footer />
+      <BrowserRouter>
+        <Nav onSearch={handleSearch} />
+        <Route exact path="/">
+          <Home tmdb={tmdb} />
+        </Route>
+        <Route path="/search">
+          <PageSearch list={searched} tmdb={tmdb} />
+        </Route>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
