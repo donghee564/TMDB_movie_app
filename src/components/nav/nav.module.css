@@ -34,11 +34,12 @@
 .searchBox {
   margin-left: 3%;
   flex-grow: 1;
+  height: 32px;
 }
 
 .input {
   all: unset;
-  height: 32px;
+  height: 100%;
   padding-left: 15px;
   width: 87%;
   background-color: makerWhite;
@@ -53,7 +54,7 @@
 .search {
   all: unset;
   cursor: pointer;
-  height: 32px;
+  height: 100%;
   padding: 0 15px;
   border-left: 1px solid makerDarkGrey;
   border-top-right-radius: 3px;

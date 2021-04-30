@@ -4,11 +4,11 @@ import styles from "./page_search_list.module.css";
 
 function PageSearchList({ list }) {
   return (
-    <ul className={styles.list}>
+    <div className={styles.list}>
       {list.map((item) => {
         return <PageSearchItem item={item} key={item.id} />;
       })}
-    </ul>
+    </div>
   );
 }
 

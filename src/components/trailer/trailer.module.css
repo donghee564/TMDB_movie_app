@@ -25,7 +25,7 @@
 
 .title {
   font-weight: normal;
-  font-size: 1.7em;
+  font-size: 1.2em;
   position: relative;
   align-self: flex-start;
   margin-bottom: 40px;
@@ -36,8 +36,8 @@
   position: absolute;
   content: "";
   left: -15px;
-  top: 0;
-  height: 100%;
+  top: 3px;
+  height: 90%;
   width: 5px;
   border-radius: 2px;
   background: makerGradient;

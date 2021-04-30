@@ -1,26 +1,31 @@
-@value makerLightGrey, makerDarkGrey from "../../common/colors.css";
+@value makerWhite, makerLightGrey, makerDarkGrey from "../../common/colors.css";
 
 .searchedItem {
-  width: 45%;
-  margin: 0 20px 20px;
-  height: 450px;
-}
-
-.bgLayer {
-  width: 100%;
-  height: 100%;
-  background-color: #0d253fcb;
-  padding: 20px;
+  width: 47%;
+  height: 280px;
+  margin: 40px 10px;
+  background-color: rgba(255, 255, 255, 0.151);
   display: flex;
+  justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
 }
 
 .poster {
-  width: 300px;
+  width: 200px;
+  height: 320px;
+  position: absolute;
+  left: -20px;
+  top: -50px;
+  transition: all 0.5s ease-in;
 }
 
 .textBox {
-  padding: 15px;
+  padding: 10px 15px;
+  margin-left: 100px;
+  width: 70%;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .title {
@@ -34,8 +39,33 @@
   color: makerLightGrey;
 }
 
+.rates {
+  margin-top: 10px;
+  display: flex;
+  font-weight: lighter;
+  font-size: 0.85em;
+}
+
+.rate {
+  margin-right: 10px;
+  color: rgb(226, 226, 226);
+}
+
+.media {
+  margin-left: 10px;
+  color: makerWhite;
+}
+
 .overview {
+  height: 50%;
+  line-height: 1.6em;
+  overflow: hidden;
   margin-top: 40px;
   font-weight: lighter;
   font-size: 0.75em;
+  color: rgb(226, 226, 226);
+}
+
+.searchedItem:hover .poster {
+  box-shadow: 2px 2px 5px rgb(124, 124, 124);
 }
