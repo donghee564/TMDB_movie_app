@@ -48,7 +48,9 @@ const Nav = ({ onSearch }) => {
               홈
             </Link>
           </li>
-          <li>영화</li>
+          <li>
+            <Link to="/movie">영화</Link>
+          </li>
           <li>TV 시리즈</li>
           <li>My List</li>
           <li>

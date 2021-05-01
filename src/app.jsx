@@ -5,6 +5,7 @@ import styles from "./app.module.css";
 import Footer from "./components/footer/footer";
 import Home from "./components/home/home";
 import Nav from "./components/nav/nav";
+import PageMovie from "./components/page_movie/page_movie";
 import PageSearch from "./components/page_search/page_search";
 
 function App({ tmdb }) {
@@ -28,8 +29,11 @@ function App({ tmdb }) {
         <Route exact path="/">
           <Home tmdb={tmdb} />
         </Route>
-        <Route path="/search">
-          <PageSearch list={searched} tmdb={tmdb} />
+        <Route exact path="/search">
+          <PageSearch list={searched} />
+        </Route>
+        <Route exact path="/movie">
+          <PageMovie tmdb={tmdb} />
         </Route>
         <Footer />
       </BrowserRouter>

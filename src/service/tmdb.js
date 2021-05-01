@@ -12,9 +12,9 @@ class Tmdb {
     return result.data.results;
   }
 
-  async popular(type) {
+  async popular(type, genre) {
     const result = await axios.get(
-      `https://api.themoviedb.org/3/${type}/popular?api_key=${this.key}&language=ko-KR`
+      `https://api.themoviedb.org/3/${type}/popular?api_key=${this.key}&language=ko-KR${genre}`
     );
     return result.data.results;
   }
@@ -25,13 +25,6 @@ class Tmdb {
     );
     return result.data.results;
   }
-
-  // async genre(media) {
-  //   const result = await axios.get(
-  //     `https://api.themoviedb.org/3/genre/${media}/list?api_key=${this.key}&language=ko-KR`
-  //   );
-  //   return result.data.genres;
-  // }
 }
 
 export default Tmdb;

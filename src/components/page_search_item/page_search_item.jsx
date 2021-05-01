@@ -5,7 +5,9 @@ import { StarFill, HeartFill, PersonFill } from "react-bootstrap-icons";
 function PageSearchItem({ item }) {
   const poster = () => {
     if (item.media_type === "person") {
-      return `https://image.tmdb.org/t/p/w300/${item.profile_path}`;
+      return item.profile_path === null
+        ? "./images/default_poster.jpg"
+        : `https://image.tmdb.org/t/p/w300/${item.profile_path}`;
     }
     return item.poster_path === null
       ? "./images/default_poster.jpg"
@@ -16,7 +18,12 @@ function PageSearchItem({ item }) {
   const release_date =
     item.release_date === undefined ? item.first_air_date : item.release_date;
 
-  // const overview = time.media_type === "person" ? item.known_for
+  // item.known_for && item.known_for.map((item) => item.title.join(" "));
+  const overview =
+    item.overview === undefined
+      ? item.known_for &&
+        "출연 작품: " + item.known_for.map((item) => item.title + " ")
+      : item.overview;
 
   return (
     <div className={styles.searchedItem}>
@@ -39,7 +46,7 @@ function PageSearchItem({ item }) {
             <PersonFill /> <span> {Math.round(item.popularity)}</span>
           </li>
         </ul>
-        <p className={styles.overview}>{item.overview}</p>
+        <p className={styles.overview}>{overview}</p>
       </div>
     </div>
   );

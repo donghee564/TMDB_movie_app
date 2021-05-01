@@ -3,6 +3,7 @@ import styles from "./home.module.css";
 import Trailer from "../trailer/trailer";
 import Trending from "../trending/trending";
 import Popular from "../popular/popular";
+import { memo } from "react/cjs/react.production.min";
 
 function Home({ tmdb }) {
   const [trendingMovies, setTrendingMovies] = useState([]); //영화리스트
@@ -30,47 +31,23 @@ function Home({ tmdb }) {
       .then((result) => {
         setPopularList(result);
       });
+    console.log("rendering main page");
   }, [tmdb, timeMovie, timeTV, type]);
 
-  const handleMovieTimeChange = useCallback(
-    (event) => {
-      setTimeMovie(event.target.value);
-      tmdb
-        .trending("movie", timeMovie) //
-        .then((result) => {
-          setTrendingMovies(result);
-        });
-    },
-    [tmdb, timeMovie]
-  );
+  const handleMovieTimeChange = useCallback((event) => {
+    setTimeMovie(event.target.value);
+  }, []);
 
-  const handleTvTimeChange = useCallback(
-    (event) => {
-      setTimeTV(event.target.value);
-      tmdb
-        .trending("tv", timeTV) //
-        .then((result) => {
-          setTrendingTVShows(result);
-        });
-    },
-    [tmdb, timeTV]
-  );
+  const handleTvTimeChange = useCallback((event) => {
+    setTimeTV(event.target.value);
+  }, []);
 
-  const handleMediaChange = useCallback(
-    (event) => {
-      setType(event.target.value);
-      tmdb
-        .popular(type) //
-        .then((result) => {
-          setPopularList(result);
-        });
-    },
-    [tmdb, type]
-  );
+  const handleMediaChange = useCallback((event) => {
+    setType(event.target.value);
+  }, []);
 
   return (
     <div className={styles.home}>
-      {/* <Nav /> */}
       <Popular
         list={popularList}
         type={type}
@@ -91,9 +68,8 @@ function Home({ tmdb }) {
         time={timeTV}
         handleTimeChange={handleTvTimeChange}
       />
-      {/* <Footer /> */}
     </div>
   );
 }
 
-export default Home;
+export default memo(Home);
