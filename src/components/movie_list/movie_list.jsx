@@ -3,7 +3,7 @@ import MovieItem from "../movie_item/movie_item";
 import styles from "./movie_list.module.css";
 import { ChevronCompactLeft, ChevronCompactRight } from "react-bootstrap-icons";
 
-const TrendingMovieList = ({ movies }) => {
+const MovieList = ({ movies, handleModal }) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [slideLength, setSlideLength] = useState(0);
   const slideRef = useRef();
@@ -37,7 +37,7 @@ const TrendingMovieList = ({ movies }) => {
       <div ref={slide_width_ref} className={styles.moviesWrap}>
         <ul ref={slideRef} className={styles.movieList}>
           {movies.map((movie) => (
-            <MovieItem movie={movie} key={movie.id} />
+            <MovieItem movie={movie} key={movie.id} handleModal={handleModal} />
           ))}
         </ul>
       </div>
@@ -51,4 +51,4 @@ const TrendingMovieList = ({ movies }) => {
   );
 };
 
-export default memo(TrendingMovieList);
+export default memo(MovieList);

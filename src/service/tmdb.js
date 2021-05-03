@@ -25,6 +25,13 @@ class Tmdb {
     );
     return result.data.results;
   }
+
+  async details(media, id) {
+    const result = await axios.get(
+      `https://api.themoviedb.org/3/${media}/${id}?api_key=${this.key}&language=ko-KR`
+    );
+    return result.data;
+  }
 }
 
 export default Tmdb;

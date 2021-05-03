@@ -2,8 +2,8 @@
 
 .trailer {
   width: 100%;
-  background: url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/9yBVqNruk6Ykrwc32qrK2TIE5xw.jpg")
-    no-repeat center center/cover;
+  /* background: url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/9yBVqNruk6Ykrwc32qrK2TIE5xw.jpg")
+    no-repeat center center/cover; */
 }
 
 .bgFilter {

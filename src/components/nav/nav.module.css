@@ -2,7 +2,7 @@
 
 .navWrap {
   width: 100%;
-  background-color: #121212;
+  background-color: rgba(0, 0, 0, 0.178);
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgba(167, 167, 167, 0.295);

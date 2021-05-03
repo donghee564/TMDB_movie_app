@@ -2,12 +2,16 @@ import React, { memo } from "react";
 import styles from "./movie_item.module.css";
 import { StarFill, Heart, Plus, Play } from "react-bootstrap-icons";
 
-const MovieItem = ({ movie }) => {
+const MovieItem = ({ movie, handleModal }) => {
   const title = movie.title === undefined ? movie.name : movie.title;
   const release_date =
     movie.release_date === undefined
       ? movie.first_air_date
       : movie.release_date;
+
+  const handleClick = () => {
+    handleModal(movie);
+  };
 
   return (
     <li className={styles.movie}>
@@ -26,7 +30,6 @@ const MovieItem = ({ movie }) => {
           <h2 className={styles.addMyList}>내 리스트에 추가.</h2>
           <p className={styles.posterTitle}>{title}</p>
           <p className={styles.releaseDate}>개봉일: {release_date}</p>
-          {/* <p className={styles.overview}>{movie.overview}</p> */}
         </div>
       </div>
       <div className={styles.textBox}>
@@ -44,9 +47,9 @@ const MovieItem = ({ movie }) => {
         <button className={styles.myList}>
           <Plus size={20} /> 내 리스트
         </button>
-        <button className={styles.watchTrailer}>
+        <button onClick={handleClick} className={styles.watchTrailer}>
           <Play size={20} />
-          예고편 보기
+          자세히 보기
         </button>
       </div>
     </li>

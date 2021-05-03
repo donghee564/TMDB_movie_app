@@ -3,7 +3,7 @@ import TimeWindow from "../time-window/time-window";
 import styles from "./trending.module.css";
 import MovieList from "../movie_list/movie_list";
 
-function Trending({ label, list, title, time, handleTimeChange }) {
+function Trending({ label, list, title, time, handleTimeChange, handleModal }) {
   return (
     <section className={styles.trendingMovies}>
       <div className={styles.titleWrap}>
@@ -15,7 +15,7 @@ function Trending({ label, list, title, time, handleTimeChange }) {
           label={label}
         />
       </div>
-      <MovieList movies={list} />
+      <MovieList movies={list} handleModal={handleModal} />
     </section>
   );
 }

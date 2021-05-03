@@ -1,0 +1,87 @@
+@value makerLightGrey, makerDarkGrey from "../../common/colors.css";
+
+.wrap {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.753);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 60%;
+  height: 500px;
+  background-color: makerDarkGrey;
+  display: flex;
+}
+
+.textBox {
+  position: relative;
+  padding: 20px;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 1.5em;
+}
+
+.infos,
+.tvInfos {
+  margin-top: 5px;
+  font-weight: lighter;
+  font-size: 1em;
+  display: flex;
+  color: makerLightGrey;
+}
+
+.info,
+.tvInfo {
+  margin-right: 15px;
+}
+
+.average {
+  margin-top: 10px;
+  font-weight: lighter;
+  font-size: 1em;
+}
+
+.tagline {
+  margin-top: 30px;
+  font-weight: lighter;
+  font-size: 1.2em;
+}
+
+.subTitle {
+  margin-top: 40px;
+  font-weight: lighter;
+  font-size: 1em;
+}
+
+.overview {
+  margin-top: 10px;
+  font-weight: lighter;
+  font-size: 0.9em;
+  color: makerLightGrey;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+  padding: 6px 25px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-weight: lighter;
+  position: absolute;
+  bottom: 20px;
+  left: 43%;
+  transition: all 0.35s ease-in;
+}
+
+.button:hover {
+  background-color: rgb(88, 88, 88);
+}
