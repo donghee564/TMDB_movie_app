@@ -8,6 +8,7 @@ import ItemDetailModal from "./components/item_detail_modal/item_detail_modal";
 import Nav from "./components/nav/nav";
 import PageMovie from "./components/page_movie/page_movie";
 import PageSearch from "./components/page_search/page_search";
+import PageTv from "./components/page_tv/page_tv";
 
 function App({ tmdb }) {
   const [searched, setSearched] = useState([]); //검색 결과
@@ -63,11 +64,14 @@ function App({ tmdb }) {
         <Route exact path="/">
           <Home tmdb={tmdb} handleModal={handleModal} />
         </Route>
-        <Route exact path="/search">
+        <Route path="/search">
           <PageSearch list={searched} />
         </Route>
-        <Route exact path="/movie">
+        <Route path="/movie">
           <PageMovie tmdb={tmdb} handleModal={handleModal} />
+        </Route>
+        <Route path="/tv">
+          <PageTv tmdb={tmdb} handleModal={handleModal} />
         </Route>
         <Footer />
       </BrowserRouter>

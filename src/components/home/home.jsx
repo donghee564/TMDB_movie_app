@@ -31,7 +31,7 @@ function Home({ tmdb, handleModal }) {
       .then((result) => {
         setPopularList(result);
       });
-    console.log("rendering main page");
+    return console.log("main page");
   }, [tmdb, timeMovie, timeTV, type]);
 
   const handleMovieTimeChange = useCallback((event) => {

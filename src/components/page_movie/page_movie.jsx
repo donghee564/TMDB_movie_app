@@ -14,31 +14,31 @@ function PageMovie({ tmdb, handleModal }) {
 
   useEffect(() => {
     tmdb
-      .popular("movie", "&with_genres=28") //
+      .popular("movie", "&with_genres=28") // 액션
       .then((result) => {
         setActionMovies(result);
       });
     tmdb
-      .popular("movie", "&with_genres=35") //
+      .popular("movie", "&with_genres=35") // 코미디
       .then((result) => {
         setComedyMovies(result);
       });
     tmdb
-      .popular("movie", "&with_genres=878") //
+      .popular("movie", "&with_genres=878") // SF
       .then((result) => {
         setSfMovies(result);
       });
     tmdb
-      .popular("movie", "&with_genres=16") //
+      .popular("movie", "&with_genres=16") // 애니메이션
       .then((result) => {
         setAnimationMovies(result);
       });
     tmdb
-      .popular("movie", "&with_genres=27") //
+      .popular("movie", "&with_genres=27") // 호러
       .then((result) => {
         setHorrorMovies(result);
       });
-    console.log("rendering page movie");
+    return console.log("page movie");
   }, [tmdb]);
 
   return (
@@ -49,19 +49,23 @@ function PageMovie({ tmdb, handleModal }) {
       }}
     >
       <div className={styles.movie}>
-        <h1 className={styles.pageTitle}>장르별 인기영화</h1>
-        <h1 className={styles.title}>액션</h1>
-        <MovieList movies={actionMovies} handleModal={handleModal} />
         <div className={styles.bgLayer}>
-          <h1 className={styles.title}>코미디</h1>
-          <MovieList movies={comedyMovies} handleModal={handleModal} />
+          <h1 className={styles.pageTitle}>장르별 인기영화</h1>
+          <h1 className={styles.title}>액션</h1>
+          <MovieList movies={actionMovies} handleModal={handleModal} />
         </div>
-        <h1 className={styles.title}>SF</h1>
-        <MovieList movies={sfMovies} handleModal={handleModal} />
+        <h1 className={styles.title}>코미디</h1>
+        <MovieList movies={comedyMovies} handleModal={handleModal} />
+        <div className={styles.bgLayer}>
+          <h1 className={styles.title}>SF</h1>
+          <MovieList movies={sfMovies} handleModal={handleModal} />
+        </div>
         <h1 className={styles.title}>애니메이션</h1>
         <MovieList movies={animationMovies} handleModal={handleModal} />
-        <h1 className={styles.title}>호러</h1>
-        <MovieList movies={horrorMovies} handleModal={handleModal} />
+        <div className={styles.bgLayer}>
+          <h1 className={styles.title}>호러</h1>
+          <MovieList movies={horrorMovies} handleModal={handleModal} />
+        </div>
       </div>
     </section>
   );
