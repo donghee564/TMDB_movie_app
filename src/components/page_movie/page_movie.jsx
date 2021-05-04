@@ -50,7 +50,7 @@ function PageMovie({ tmdb, handleModal }) {
     >
       <div className={styles.movie}>
         <div className={styles.bgLayer}>
-          <h1 className={styles.pageTitle}>장르별 인기영화</h1>
+          <h1 className={styles.pageTitle}>인기 영화</h1>
           <h1 className={styles.title}>액션</h1>
           <MovieList movies={actionMovies} handleModal={handleModal} />
         </div>

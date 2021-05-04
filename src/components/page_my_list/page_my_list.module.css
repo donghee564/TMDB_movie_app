@@ -1,0 +1,16 @@
+@value makerLightGrey from "../../common/colors.css";
+
+.myList {
+  min-height: 70vh;
+}
+
+.pageTitle {
+  width: 1350px;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-top: 30px;
+  color: makerLightGrey;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid makerLightGrey;
+}

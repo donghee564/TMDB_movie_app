@@ -54,7 +54,9 @@ const Nav = ({ onSearch }) => {
           <li>
             <Link to="/tv">TV 시리즈</Link>
           </li>
-          <li>My List</li>
+          <li>
+            <Link to="/my_list">My List</Link>
+          </li>
           <li>
             <button className={styles.login}>로그인</button>
           </li>

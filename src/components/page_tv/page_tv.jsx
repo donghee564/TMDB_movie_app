@@ -38,13 +38,13 @@ function PageTv({ tmdb, handleModal }) {
   return (
     <section
       className={styles.wrap}
-      // style={{
-      //   background: "url('images/black_pattern.jpg') center center/cover fixed",
-      // }}
+      style={{
+        background: "url('images/black_pattern.png') center center/cover fixed",
+      }}
     >
       <div className={styles.movie}>
         <div className={styles.bgLayer}>
-          <h1 className={styles.pageTitle}>장르별 인기 TV 시리즈</h1>
+          <h1 className={styles.pageTitle}>인기 TV 시리즈</h1>
           <h1 className={styles.title}>액션</h1>
           <MovieList movies={actionTv} handleModal={handleModal} />
         </div>

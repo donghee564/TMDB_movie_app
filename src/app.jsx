@@ -7,6 +7,7 @@ import Home from "./components/home/home";
 import ItemDetailModal from "./components/item_detail_modal/item_detail_modal";
 import Nav from "./components/nav/nav";
 import PageMovie from "./components/page_movie/page_movie";
+import PageMyList from "./components/page_my_list/page_my_list";
 import PageSearch from "./components/page_search/page_search";
 import PageTv from "./components/page_tv/page_tv";
 
@@ -72,6 +73,9 @@ function App({ tmdb }) {
         </Route>
         <Route path="/tv">
           <PageTv tmdb={tmdb} handleModal={handleModal} />
+        </Route>
+        <Route path="/my_list">
+          <PageMyList />
         </Route>
         <Footer />
       </BrowserRouter>

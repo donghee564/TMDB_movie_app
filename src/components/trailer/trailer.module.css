@@ -2,14 +2,14 @@
 
 .trailer {
   width: 100%;
-  /* background: url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/9yBVqNruk6Ykrwc32qrK2TIE5xw.jpg")
-    no-repeat center center/cover; */
+  background: url("https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/9yBVqNruk6Ykrwc32qrK2TIE5xw.jpg")
+    no-repeat center center/cover;
 }
 
 .bgFilter {
   width: 100%;
   height: 100%;
-  padding: 40px 0;
+  padding: 30px 0;
   display: flex;
   justify-content: center;
   background-color: #0d253fda;
@@ -28,7 +28,7 @@
   font-size: 1.2em;
   position: relative;
   align-self: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-left: 30px;
 }
 

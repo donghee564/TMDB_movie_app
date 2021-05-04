@@ -69,4 +69,9 @@
   color: makerWhite;
   padding: 6px 15px;
   border-radius: 5px;
+  font-weight: normal;
+}
+
+.login:hover {
+  opacity: 0.7;
 }

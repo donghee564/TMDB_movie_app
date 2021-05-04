@@ -1,4 +1,4 @@
-@value makerGradient from "../../common/colors.css";
+@value makerLightGrey, makerGradient from "../../common/colors.css";
 .wrap {
   width: 100%;
 }
@@ -12,21 +12,27 @@
 
 .bgLayer {
   width: 100%;
-  background-color: #131313;
+  background-color: #141414d3;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .pageTitle {
-  font-weight: normal;
-  font-size: 1.6em;
+  width: 1350px;
+  font-weight: bold;
+  font-size: 1.8em;
   margin-top: 30px;
+  color: makerLightGrey;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid makerLightGrey;
 }
 
 .title {
+  width: 1350px;
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 60px;
   font-weight: normal;
   font-size: 1.4em;
   position: relative;
