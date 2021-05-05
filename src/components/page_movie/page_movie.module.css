@@ -1,4 +1,5 @@
 @value makerLightGrey, makerGradient from "../../common/colors.css";
+
 .wrap {
   width: 100%;
 }
@@ -12,21 +13,11 @@
 
 .bgLayer {
   width: 100%;
-  background-color: #141414d3;
+  min-height: 70vh;
+  background-color: #070707c2;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.pageTitle {
-  width: 1350px;
-  font-weight: bold;
-  font-size: 1.8em;
-  margin-top: 30px;
-  color: makerLightGrey;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid makerLightGrey;
 }
 
 .title {

@@ -1,0 +1,7 @@
+.movies {
+  width: 1350px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}

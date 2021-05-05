@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./nav.module.css";
 import { Search } from "react-bootstrap-icons";
 import { Link, useHistory } from "react-router-dom";
-import { useRef } from "react/cjs/react.development";
 
 const Nav = ({ onSearch }) => {
   const searchRef = useRef();

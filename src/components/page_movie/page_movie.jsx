@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { memo } from "react";
 import { useEffect } from "react";
-import MovieList from "../movie_list/movie_list";
+import PageMovieList from "../page_movie_list/page_movie_list";
+import SubNav from "../sub_nav/sub_nav";
 import styles from "./page_movie.module.css";
 
 function PageMovie({ tmdb, handleModal }) {
@@ -11,6 +12,7 @@ function PageMovie({ tmdb, handleModal }) {
   const [sfMovies, setSfMovies] = useState([]);
   const [animationMovies, setAnimationMovies] = useState([]);
   const [horrorMovies, setHorrorMovies] = useState([]);
+  const [genre, setGenre] = useState("액션");
 
   useEffect(() => {
     tmdb
@@ -41,6 +43,27 @@ function PageMovie({ tmdb, handleModal }) {
     return console.log("page movie");
   }, [tmdb]);
 
+  const handleGenreChange = (type) => {
+    setGenre(type);
+  };
+
+  const seletectedGenre = () => {
+    switch (genre) {
+      case "액션":
+        return actionMovies;
+      case "코미디":
+        return comedyMovies;
+      case "SF":
+        return sfMovies;
+      case "애니메이션":
+        return animationMovies;
+      case "호러":
+        return horrorMovies;
+      default:
+        return;
+    }
+  };
+
   return (
     <section
       className={styles.wrap}
@@ -50,21 +73,9 @@ function PageMovie({ tmdb, handleModal }) {
     >
       <div className={styles.movie}>
         <div className={styles.bgLayer}>
-          <h1 className={styles.pageTitle}>인기 영화</h1>
-          <h1 className={styles.title}>액션</h1>
-          <MovieList movies={actionMovies} handleModal={handleModal} />
-        </div>
-        <h1 className={styles.title}>코미디</h1>
-        <MovieList movies={comedyMovies} handleModal={handleModal} />
-        <div className={styles.bgLayer}>
-          <h1 className={styles.title}>SF</h1>
-          <MovieList movies={sfMovies} handleModal={handleModal} />
-        </div>
-        <h1 className={styles.title}>애니메이션</h1>
-        <MovieList movies={animationMovies} handleModal={handleModal} />
-        <div className={styles.bgLayer}>
-          <h1 className={styles.title}>호러</h1>
-          <MovieList movies={horrorMovies} handleModal={handleModal} />
+          <SubNav handleGenreChange={handleGenreChange} />
+          <h1 className={styles.title}>{genre}</h1>
+          <PageMovieList list={seletectedGenre()} handleModal={handleModal} />
         </div>
       </div>
     </section>
