@@ -5,7 +5,7 @@ import Trending from "../trending/trending";
 import Popular from "../popular/popular";
 import { memo } from "react/cjs/react.production.min";
 
-function Home({ tmdb, handleModal }) {
+function Home({ tmdb, handleModal, handleAdd }) {
   const [trendingMovies, setTrendingMovies] = useState([]); //영화리스트
   const [trendingTVShows, setTrendingTVShows] = useState([]); //TV시리즈 리스트
   const [popularList, setPopularList] = useState([]); //인기리스트
@@ -53,6 +53,7 @@ function Home({ tmdb, handleModal }) {
         type={type}
         handleMediaChange={handleMediaChange}
         handleModal={handleModal}
+        handleAdd={handleAdd}
       />
       <Trending
         list={trendingMovies}
@@ -61,6 +62,7 @@ function Home({ tmdb, handleModal }) {
         time={timeMovie}
         handleTimeChange={handleMovieTimeChange}
         handleModal={handleModal}
+        handleAdd={handleAdd}
       />
       <Trailer />
       <Trending
@@ -70,6 +72,7 @@ function Home({ tmdb, handleModal }) {
         time={timeTV}
         handleTimeChange={handleTvTimeChange}
         handleModal={handleModal}
+        handleAdd={handleAdd}
       />
     </div>
   );

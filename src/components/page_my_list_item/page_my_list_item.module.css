@@ -1,0 +1,105 @@
+@value makerLightGrey from "../../common/colors.css";
+
+.item {
+  margin: 0 12px 30px;
+  width: 200px;
+}
+
+.poster {
+  width: 200px;
+  height: 294px;
+  position: relative;
+}
+
+.textBox {
+  padding-top: 10px;
+}
+
+.title {
+  font-weight: lighter;
+  font-size: 1em;
+}
+
+.buttons {
+  margin-top: 5px;
+  color: makerLightGrey;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.detail,
+.delete {
+  text-align: center;
+  transition: all 0.3s ease-in;
+}
+
+.detail {
+  position: relative;
+  margin-right: 18px;
+}
+
+.detail::after {
+  position: absolute;
+  right: -10px;
+  top: 5px;
+  content: "";
+  height: 70%;
+  width: 1px;
+  background-color: makerLightGrey;
+}
+
+.detail:hover,
+.delete:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+/* 포스터 이미지 호버 이펙트 */
+.imgBox {
+  background: #1a1a1a;
+  position: relative;
+}
+
+.caption {
+  display: block;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.releaseDate,
+.posterTitle {
+  opacity: 0;
+  transition: all 0.35s;
+  margin-left: 2%;
+}
+
+.releaseDate {
+  font-weight: lighter;
+  color: makerLightGrey;
+}
+
+.posterTitle {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.imgBox:hover .caption {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.imgBox:hover .releaseDate,
+.imgBox:hover .posterTitle {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+.imgBox:hover .plus {
+  opacity: 0;
+  transition-delay: 0s;
+}

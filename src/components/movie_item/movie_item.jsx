@@ -2,15 +2,19 @@ import React, { memo } from "react";
 import styles from "./movie_item.module.css";
 import { StarFill, Heart, Plus, Play } from "react-bootstrap-icons";
 
-const MovieItem = ({ movie, handleModal }) => {
+const MovieItem = ({ movie, handleModal, handleAdd }) => {
   const title = movie.title === undefined ? movie.name : movie.title;
   const release_date =
     movie.release_date === undefined
       ? movie.first_air_date
       : movie.release_date;
 
-  const handleClick = () => {
+  const handleDetailClick = () => {
     handleModal(movie);
+  };
+
+  const handleAddToMyList = () => {
+    handleAdd(movie);
   };
 
   return (
@@ -44,10 +48,10 @@ const MovieItem = ({ movie, handleModal }) => {
           </p>
         </div>
         <h3 className={styles.title}>{title}</h3>
-        <button className={styles.myList}>
+        <button onClick={handleAddToMyList} className={styles.myList}>
           <Plus size={20} /> 내 리스트
         </button>
-        <button onClick={handleClick} className={styles.watchTrailer}>
+        <button onClick={handleDetailClick} className={styles.watchTrailer}>
           <Play size={20} />
           자세히 보기
         </button>

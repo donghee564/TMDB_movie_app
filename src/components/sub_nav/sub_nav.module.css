@@ -1,4 +1,4 @@
-@value makerLightGrey from "../../common/colors.css";
+@value makerWhite, makerLightGrey from "../../common/colors.css";
 
 .nav {
   width: 1350px;
@@ -14,6 +14,7 @@
 .pageTitle {
   font-weight: bold;
   font-size: 1.8em;
+  color: rgb(224, 224, 224);
 }
 
 .menus {
@@ -29,7 +30,7 @@
 
 .menu:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  color: #fff;
 }
 
 .base {
@@ -37,5 +38,5 @@
 }
 
 .selected {
-  color: red;
+  color: makerWhite;
 }

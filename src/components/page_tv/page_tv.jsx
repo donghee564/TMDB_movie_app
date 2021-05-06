@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { memo } from "react";
 import { useEffect } from "react";
-import MovieList from "../movie_list/movie_list";
+import PageTvList from "../page_tv_list/page_tv_list";
+import SubNavTv from "../sub_nav_tv/sub_nav_tv";
 import styles from "./page_tv.module.css";
 
 function PageTv({ tmdb, handleModal }) {
@@ -10,6 +11,7 @@ function PageTv({ tmdb, handleModal }) {
   const [comedyTv, setComedyTv] = useState([]);
   const [sfTv, setSfTv] = useState([]);
   const [animationTv, setAnimationTv] = useState([]);
+  const [genre, setGenre] = useState("액션");
 
   useEffect(() => {
     tmdb
@@ -35,6 +37,25 @@ function PageTv({ tmdb, handleModal }) {
     return console.log("page TV");
   }, [tmdb]);
 
+  const handleGenreChange = (type) => {
+    setGenre(type);
+  };
+
+  const seletectedGenre = () => {
+    switch (genre) {
+      case "액션":
+        return actionTv;
+      case "코미디":
+        return comedyTv;
+      case "SF":
+        return sfTv;
+      case "애니메이션":
+        return animationTv;
+      default:
+        return;
+    }
+  };
+
   return (
     <section
       className={styles.wrap}
@@ -44,18 +65,10 @@ function PageTv({ tmdb, handleModal }) {
     >
       <div className={styles.movie}>
         <div className={styles.bgLayer}>
-          <h1 className={styles.pageTitle}>인기 TV 시리즈</h1>
-          <h1 className={styles.title}>액션</h1>
-          <MovieList movies={actionTv} handleModal={handleModal} />
+          <SubNavTv handleGenreChange={handleGenreChange} />
+          <h1 className={styles.title}>{genre}</h1>
+          <PageTvList list={seletectedGenre()} handleModal={handleModal} />
         </div>
-        <h1 className={styles.title}>코미디</h1>
-        <MovieList movies={comedyTv} handleModal={handleModal} />
-        <div className={styles.bgLayer}>
-          <h1 className={styles.title}>SF</h1>
-          <MovieList movies={sfTv} handleModal={handleModal} />
-        </div>
-        <h1 className={styles.title}>애니메이션</h1>
-        <MovieList movies={animationTv} handleModal={handleModal} />
       </div>
     </section>
   );

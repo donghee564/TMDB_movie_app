@@ -1,0 +1,42 @@
+@value makerWhite, makerLightGrey from "../../common/colors.css";
+
+.nav {
+  width: 1350px;
+  margin-top: 20px;
+  padding: 0 10px 10px;
+  border-bottom: 2px solid makerLightGrey;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: makerLightGrey;
+}
+
+.pageTitle {
+  font-weight: bold;
+  font-size: 1.8em;
+  color: rgb(224, 224, 224);
+}
+
+.menus {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  margin-right: 20px;
+  font-size: 1.1em;
+  transition: all 0.3s;
+}
+
+.menu:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.base {
+  color: makerLightGrey;
+}
+
+.selected {
+  color: makerWhite;
+}

@@ -3,11 +3,11 @@ import { useState } from "react";
 import styles from "./sub_nav.module.css";
 
 const SubNav = ({ handleGenreChange }) => {
-  const [clicked, setClicked] = useState("1");
+  const [clicked, setClicked] = useState("액션"); //선택된 장르 메뉴
 
   const handleClick = (e) => {
     handleGenreChange(e.target.innerText);
-    setClicked(e.target.id);
+    setClicked(e.target.innerText);
   };
 
   return (
@@ -16,8 +16,7 @@ const SubNav = ({ handleGenreChange }) => {
       <ul className={styles.menus}>
         <li className={styles.menu}>
           <p
-            className={clicked === 1 ? styles.selected : null}
-            id="1"
+            className={clicked === "액션" ? styles.selected : styles.base}
             onClick={handleClick}
           >
             액션
@@ -25,8 +24,7 @@ const SubNav = ({ handleGenreChange }) => {
         </li>
         <li className={styles.menu}>
           <p
-            className={clicked === 2 ? styles.selected : null}
-            id="2"
+            className={clicked === "코미디" ? styles.selected : styles.base}
             onClick={handleClick}
           >
             코미디
@@ -34,8 +32,7 @@ const SubNav = ({ handleGenreChange }) => {
         </li>
         <li className={styles.menu}>
           <p
-            className={clicked === 3 ? styles.selected : null}
-            id="3"
+            className={clicked === "SF" ? styles.selected : styles.base}
             onClick={handleClick}
           >
             SF
@@ -43,8 +40,7 @@ const SubNav = ({ handleGenreChange }) => {
         </li>
         <li className={styles.menu}>
           <p
-            className={clicked === 4 ? styles.selected : null}
-            id="4"
+            className={clicked === "애니메이션" ? styles.selected : styles.base}
             onClick={handleClick}
           >
             애니메이션
@@ -52,8 +48,7 @@ const SubNav = ({ handleGenreChange }) => {
         </li>
         <li className={styles.menu}>
           <p
-            className={clicked === 5 ? styles.selected : null}
-            id="5"
+            className={clicked === "호러" ? styles.selected : styles.base}
             onClick={handleClick}
           >
             호러
