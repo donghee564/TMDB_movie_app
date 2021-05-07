@@ -3,7 +3,7 @@ import styles from "./nav.module.css";
 import { Search } from "react-bootstrap-icons";
 import { Link, useHistory } from "react-router-dom";
 
-const Nav = ({ onSearch, count }) => {
+const Nav = ({ onSearch, list }) => {
   const searchRef = useRef();
   const history = useHistory();
 
@@ -20,6 +20,8 @@ const Nav = ({ onSearch, count }) => {
       history.push("./search");
     }
   };
+
+  const count = list.length;
 
   return (
     <nav className={styles.navWrap}>
@@ -42,19 +44,19 @@ const Nav = ({ onSearch, count }) => {
           </button>
         </div>
         <ul className={styles.menu}>
-          <li>
+          <li className={styles.menuLink}>
             <Link exact="true" to="/">
               홈
             </Link>
           </li>
-          <li>
+          <li className={styles.menuLink}>
             <Link to="/movie">영화</Link>
           </li>
-          <li>
+          <li className={styles.menuLink}>
             <Link to="/tv">TV 시리즈</Link>
           </li>
-          <li>
-            <Link to="/my_list">My List</Link>{" "}
+          <li className={styles.menuLink}>
+            <Link to="/my_list">My List</Link>
             <span className={styles.count}>{count}</span>
           </li>
           <li>

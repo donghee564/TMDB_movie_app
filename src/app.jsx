@@ -16,7 +16,6 @@ function App({ tmdb }) {
   const [showModal, setShowModal] = useState(false); //디테일 창 스위치
   const [itemDetail, setItemDetail] = useState({}); // 클릭된 아이템 정보
   const [myList, setMyList] = useState([]); // 내 리스트 목록
-  const [myListCount, setMyListCount] = useState(0); // 내 리스트 아이템 개수
 
   const handleModal = useCallback(
     (item) => {
@@ -40,7 +39,6 @@ function App({ tmdb }) {
 
   const handleAdd = (item) => {
     setMyList([...myList, item]);
-    setMyListCount(myListCount + 1);
   };
 
   const handleDelete = (item) => {
@@ -48,7 +46,6 @@ function App({ tmdb }) {
       return movie.id !== item.id;
     });
     setMyList(newList);
-    setMyListCount(myListCount - 1);
   };
 
   const handleCloseModal = () => {
@@ -72,13 +69,11 @@ function App({ tmdb }) {
     [tmdb]
   );
 
-  console.log(myList);
-
   return (
     <div className={styles.app}>
       {modal}
       <BrowserRouter>
-        <Nav onSearch={handleSearch} count={myListCount} />
+        <Nav onSearch={handleSearch} list={myList} />
         <Route exact path="/">
           <Home tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
         </Route>
@@ -86,10 +81,14 @@ function App({ tmdb }) {
           <PageSearch list={searched} />
         </Route>
         <Route path="/movie">
-          <PageMovie tmdb={tmdb} handleModal={handleModal} />
+          <PageMovie
+            tmdb={tmdb}
+            handleModal={handleModal}
+            handleAdd={handleAdd}
+          />
         </Route>
         <Route path="/tv">
-          <PageTv tmdb={tmdb} handleModal={handleModal} />
+          <PageTv tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
         </Route>
         <Route path="/my_list">
           <PageMyList

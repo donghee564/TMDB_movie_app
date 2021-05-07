@@ -47,34 +47,43 @@ function Home({ tmdb, handleModal, handleAdd }) {
   }, []);
 
   return (
-    <div className={styles.home}>
-      <Popular
-        list={popularList}
-        type={type}
-        handleMediaChange={handleMediaChange}
-        handleModal={handleModal}
-        handleAdd={handleAdd}
-      />
-      <Trending
-        list={trendingMovies}
-        title="영화"
-        label="1"
-        time={timeMovie}
-        handleTimeChange={handleMovieTimeChange}
-        handleModal={handleModal}
-        handleAdd={handleAdd}
-      />
+    <section
+      className={styles.home}
+      style={{
+        background: "url('images/gvk.png') center center/cover fixed",
+      }}
+    >
+      <div className={styles.bgLayer}>
+        <Popular
+          list={popularList}
+          type={type}
+          handleMediaChange={handleMediaChange}
+          handleModal={handleModal}
+          handleAdd={handleAdd}
+        />
+        <Trending
+          list={trendingMovies}
+          title="영화"
+          label="1"
+          time={timeMovie}
+          handleTimeChange={handleMovieTimeChange}
+          handleModal={handleModal}
+          handleAdd={handleAdd}
+        />
+      </div>
       <Trailer />
-      <Trending
-        list={trendingTVShows}
-        title="TV 시리즈"
-        label="2"
-        time={timeTV}
-        handleTimeChange={handleTvTimeChange}
-        handleModal={handleModal}
-        handleAdd={handleAdd}
-      />
-    </div>
+      <div className={styles.bgLayer}>
+        <Trending
+          list={trendingTVShows}
+          title="TV 시리즈"
+          label="2"
+          time={timeTV}
+          handleTimeChange={handleTvTimeChange}
+          handleModal={handleModal}
+          handleAdd={handleAdd}
+        />
+      </div>
+    </section>
   );
 }
 

@@ -6,19 +6,22 @@ import { ChevronCompactLeft, ChevronCompactRight } from "react-bootstrap-icons";
 const MovieList = ({ movies, handleModal, handleAdd }) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [slideLength, setSlideLength] = useState(0);
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(false);
   const slideRef = useRef();
   const slide_width_ref = useRef();
 
   const nextSlide = () => {
-    slideIndex >= slideLength - 1
-      ? setSlideIndex(0)
+    // slideIndex >= slideLength - 1
+    //   ? setSlideIndex(0)
+    //   : setSlideIndex(slideIndex + 1);
+    slideIndex >= slideLength
+      ? setSlideIndex(slideIndex)
       : setSlideIndex(slideIndex + 1);
   };
 
   const prevSlide = () => {
-    slideIndex <= 0
-      ? setSlideIndex(slideLength - 1)
-      : setSlideIndex(slideIndex - 1);
+    slideIndex <= 0 ? setSlideIndex(0) : setSlideIndex(slideIndex - 1);
   };
 
   useEffect(() => {
@@ -30,6 +33,8 @@ const MovieList = ({ movies, handleModal, handleAdd }) => {
     slideRef.current.style.transform = `translateX(${
       -slide_width * slideIndex
     }px)`;
+    slideIndex === 0 ? setShowLeft(false) : setShowLeft(true);
+    slideIndex === slide_length ? setShowRight(false) : setShowRight(true);
   }, [slideIndex, slide_width_ref]);
 
   return (
@@ -46,12 +51,16 @@ const MovieList = ({ movies, handleModal, handleAdd }) => {
           ))}
         </ul>
       </div>
-      <button className={styles.leftBtn} onClick={prevSlide}>
-        <ChevronCompactLeft size={35} />
-      </button>
-      <button className={styles.rightBtn} onClick={nextSlide}>
-        <ChevronCompactRight size={35} />
-      </button>
+      {showLeft && (
+        <button className={styles.leftBtn} onClick={prevSlide}>
+          <ChevronCompactLeft size={35} />
+        </button>
+      )}
+      {showRight && (
+        <button className={styles.rightBtn} onClick={nextSlide}>
+          <ChevronCompactRight size={35} />
+        </button>
+      )}
     </div>
   );
 };

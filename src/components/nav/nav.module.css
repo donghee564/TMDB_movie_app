@@ -1,4 +1,4 @@
-@value makerBlack, makerWhite,makerPrimary,makerDarkGrey, makerGradient, makerSecondary, makerGrey, makerRed, makerWhite, makerLightGrey from "../../common/colors.css";
+@value makerGradient, makerBlack, makerWhite,makerPrimary,makerDarkGrey, makerGradient, makerSecondary, makerGrey, makerRed, makerWhite, makerLightGrey from "../../common/colors.css";
 
 .navWrap {
   width: 100%;
@@ -29,6 +29,26 @@
   font-size: 1.1em;
   font-weight: lighter;
   color: makerwhite;
+}
+
+.menuLink {
+  position: relative;
+}
+
+.menuLink::after {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  content: "";
+  background: makerGradient;
+  border-radius: 5px;
+  height: 3px;
+  width: 0;
+  transition: all 0.3s ease-in;
+}
+
+.menuLink:hover::after {
+  width: 100%;
 }
 
 .searchBox {
@@ -74,4 +94,26 @@
 
 .login:hover {
   opacity: 0.7;
+}
+
+.myList {
+  position: relative;
+}
+
+.count {
+  position: absolute;
+  top: -5px;
+  right: -17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #e60023;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 0.85em;
 }

@@ -6,7 +6,7 @@ import PageMovieList from "../page_movie_list/page_movie_list";
 import SubNav from "../sub_nav/sub_nav";
 import styles from "./page_movie.module.css";
 
-function PageMovie({ tmdb, handleModal }) {
+function PageMovie({ tmdb, handleModal, handleAdd }) {
   const [actionMovies, setActionMovies] = useState([]);
   const [comedyMovies, setComedyMovies] = useState([]);
   const [sfMovies, setSfMovies] = useState([]);
@@ -75,7 +75,11 @@ function PageMovie({ tmdb, handleModal }) {
         <div className={styles.bgLayer}>
           <SubNav handleGenreChange={handleGenreChange} />
           <h1 className={styles.title}>{genre}</h1>
-          <PageMovieList list={seletectedGenre()} handleModal={handleModal} />
+          <PageMovieList
+            list={seletectedGenre()}
+            handleModal={handleModal}
+            handleAdd={handleAdd}
+          />
         </div>
       </div>
     </section>
