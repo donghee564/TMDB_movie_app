@@ -59,9 +59,6 @@ const Nav = ({ onSearch, list }) => {
             <Link to="/my_list">My List</Link>
             <span className={styles.count}>{count}</span>
           </li>
-          <li>
-            <button className={styles.login}>로그인</button>
-          </li>
         </ul>
       </div>
     </nav>

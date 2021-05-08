@@ -22,7 +22,7 @@
 
 .menu {
   cursor: pointer;
-  width: 30%;
+  width: 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +61,7 @@
   all: unset;
   height: 100%;
   padding-left: 15px;
-  width: 87%;
+  width: 90%;
   background-color: makerWhite;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -81,15 +81,6 @@
   border-bottom-right-radius: 3px;
   background-color: makerWhite;
   color: makerDarkGrey;
-}
-
-.login {
-  all: unset;
-  background: makerGradient;
-  color: makerWhite;
-  padding: 6px 15px;
-  border-radius: 5px;
-  font-weight: normal;
 }
 
 .login:hover {
