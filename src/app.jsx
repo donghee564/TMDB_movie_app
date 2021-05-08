@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { useState, useCallback } from "react/cjs/react.development";
 import styles from "./app.module.css";
 import Footer from "./components/footer/footer";
@@ -72,30 +72,32 @@ function App({ tmdb }) {
   return (
     <div className={styles.app}>
       {modal}
-      <Nav onSearch={handleSearch} list={myList} />
-      <Route exact path="/">
-        <Home tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
-      </Route>
-      <Route path="/search">
-        <PageSearch list={searched} />
-      </Route>
-      <Route path="/movie">
-        <PageMovie
-          tmdb={tmdb}
-          handleModal={handleModal}
-          handleAdd={handleAdd}
-        />
-      </Route>
-      <Route path="/tv">
-        <PageTv tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
-      </Route>
-      <Route path="/my_list">
-        <PageMyList
-          list={myList}
-          handleModal={handleModal}
-          handleDelete={handleDelete}
-        />
-      </Route>
+      {/* <Nav onSearch={handleSearch} list={myList} /> */}
+      <Switch>
+        <Route exact path="/">
+          <Home tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
+        </Route>
+        {/* <Route path="/search">
+          <PageSearch list={searched} />
+        </Route>
+        <Route path="/movie">
+          <PageMovie
+            tmdb={tmdb}
+            handleModal={handleModal}
+            handleAdd={handleAdd}
+          />
+        </Route>
+        <Route path="/tv">
+          <PageTv tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
+        </Route>
+        <Route path="/my_list">
+          <PageMyList
+            list={myList}
+            handleModal={handleModal}
+            handleDelete={handleDelete}
+          />
+        </Route> */}
+      </Switch>
       <Footer />
     </div>
   );

@@ -8,8 +8,10 @@ import { HashRouter } from "react-router-dom";
 const tmdb = new Tmdb(process.env.REACT_APP_TMDB_API_KEY);
 
 ReactDOM.render(
-  <HashRouter>
-    <App tmdb={tmdb} />
-  </HashRouter>,
+  <React.StrictMode>
+    <HashRouter>
+      <App tmdb={tmdb} />
+    </HashRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 );
