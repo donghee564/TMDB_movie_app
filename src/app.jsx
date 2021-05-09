@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { useState, useCallback } from "react/cjs/react.development";
+import { useState, useCallback } from "react";
 import styles from "./app.module.css";
 import Footer from "./components/footer/footer";
 import Home from "./components/home/home";
