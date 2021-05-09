@@ -72,12 +72,12 @@ function App({ tmdb }) {
   return (
     <div className={styles.app}>
       {modal}
-      {/* <Nav onSearch={handleSearch} list={myList} /> */}
+      <Nav onSearch={handleSearch} list={myList} />
       <Switch>
         <Route exact path="/">
           <Home tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
         </Route>
-        {/* <Route path="/search">
+        <Route path="/search">
           <PageSearch list={searched} />
         </Route>
         <Route path="/movie">
@@ -96,7 +96,7 @@ function App({ tmdb }) {
             handleModal={handleModal}
             handleDelete={handleDelete}
           />
-        </Route> */}
+        </Route>
       </Switch>
       <Footer />
     </div>
