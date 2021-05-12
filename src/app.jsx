@@ -17,6 +17,9 @@ function App({ tmdb }) {
   const [itemDetail, setItemDetail] = useState({}); // 클릭된 아이템 정보
   const [myList, setMyList] = useState([]); // 내 리스트 목록
 
+  // 자세히 보기 버튼 틀릭시 팝업 모달창
+  // item 제목이 영화는 title TV시리즈는 name 으로 되어있으므로
+  // item.name이 undefined이면 media type을 movie로 전달한다.
   const handleModal = useCallback(
     (item) => {
       setShowModal(true);
@@ -36,28 +39,27 @@ function App({ tmdb }) {
     },
     [tmdb]
   );
-
+  // +myList 클릭시 배열에 추가
   const handleAdd = (item) => {
     setMyList([...myList, item]);
   };
-
+  // myList 에서 delete클릭시 배열에서 제거
   const handleDelete = (item) => {
     const newList = myList.filter((movie) => {
       return movie.id !== item.id;
     });
     setMyList(newList);
   };
-
+  //디테일 모달창 닫기
   const handleCloseModal = () => {
-    //디테일 모달창 닫기
     setShowModal(false);
   };
-
+  //디테일 팝업 모달창
   const modal =
     showModal === true ? (
       <ItemDetailModal item={itemDetail} handleCloseModal={handleCloseModal} />
     ) : null;
-
+  //검색
   const handleSearch = useCallback(
     (query) => {
       tmdb

@@ -15,7 +15,7 @@ const MovieList = ({ movies, handleModal, handleAdd }) => {
     // slideIndex >= slideLength - 1
     //   ? setSlideIndex(0)
     //   : setSlideIndex(slideIndex + 1);
-    slideIndex >= slideLength
+    slideIndex >= slideLength - 1
       ? setSlideIndex(slideIndex)
       : setSlideIndex(slideIndex + 1);
   };
@@ -33,8 +33,8 @@ const MovieList = ({ movies, handleModal, handleAdd }) => {
     slideRef.current.style.transform = `translateX(${
       -slide_width * slideIndex
     }px)`;
-    slideIndex === 0 ? setShowLeft(false) : setShowLeft(true);
-    slideIndex === slide_length ? setShowRight(false) : setShowRight(true);
+    slideIndex === 0 ? setShowLeft(false) : setShowLeft(true); // 첫번째 슬라이드 일때 왼쪽 화살표 버튼 숨김
+    slideIndex === slide_length - 1 ? setShowRight(false) : setShowRight(true); // 마지막 슬라이드 일때 오른쪽 화살표 숨김
   }, [slideIndex, slide_width_ref]);
 
   return (
