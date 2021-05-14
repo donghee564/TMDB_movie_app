@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+### TMDb 퍼블릭 API를 활용한 영화, TV 시리즈, 인물 정보 웹.
+데모: https://donghee564.github.io/TMDB_movie_app/#/ <br>
+created with create-react-app<br>
+BenchMark: TMDb https://www.themoviedb.org/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### 구조와 기능 요약
+1. nav 메뉴 <br>
+ 로고<br>
+ 검색: 검색어 입력후 엔터를 누르거나 검색 아이콘을 클릭하면 검색 페이지로 이동하여 검색결과를 보여준다. (영화, TV, 인물 검색) <br>
+ 주 메뉴: 클릭하면 각자의 페이지(홈, 영화, TV, MyList)로 이동한다. (라우터를 통한 링크)
+ 
+2. Routes: 
+   - Home (/): 
+      * 인기 리스트: 미디어 타입 별 인기순위 1 ~ 20 (영화, TV)
+      * 트랜딩 영화 리스트: 순위상승이 높은 목록, 집계 시간 선택 가능(오늘, 이번주)
+      * 트레일러: Youtube iframe 을 이용한 영화 트레일러 (react-responsive-carousel 플러그인 사용)
+      * 트랜딩 티비 리스트: 순위상승이 높은 목록, 집계 시간 선택 가능(오늘, 이번주)
+   - 영화 (/movie)
+      * 페이지 nav 메뉴: 장르 선택 메뉴, default menu: 액션
+      * 장르별 영화 목록 20개
+   - TV (/Tv)
+      * 페이지 nav 메뉴: 장르 선택 메뉴, default menu: 액션
+      * 장르별 TV 시리즈 목록 20개
+   - My List (/MyList) 
+      * 내 리스트에 추가한 영화, TV 목록
+      * Delete 눌러서 목록 배열에서 삭제할수 있다.
+      * 목록의 갯수는 목록 배열의 length를 측정해서 나타낸다.
+   - Search (/search)
+      * 검색 결과가 나오는 페이지 (영화, TV 시리즈, 인물)
+ 
+3. Footer
 
-## Available Scripts
+#### 사용 라이브러리
+ - axios
+ - react-router
+ - react-bootstrap-icons
+ - react-responsive-carousel
 
-In the project directory, you can run:
+#### 개선 해야할 것들
+- Clean up Function? 컴포넌트 언마운트시 memory leak 을 방지하기 위해서 클린업 함수.
 
-### `yarn start`
+- 깃헙 페이지에 배포하기 위하여 HashRouter를 사용하였는데 Type 에러가 뜨고 화면이 안나온다.. (2일 구글링했는데 결국 Typo 였다.) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 너무 많은 API call 을 하는것 같다.. 종합된 하나의 API call에서 원하는 정보만 추리고싶은데 (현재 미디어 선택, 시간 선택 할때마다 새로운 API를 호출함) 
+ 하나의 API call 마다 max result가 1페이지 20개의 아이템인거 같다. 뭔가 더 효율적인 방법이 있을듯...?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Route 가 많아지고 자식 components 들이 많아 지면서 props 를 전달하는데 어려움이 있다. 일일히 다 전달해주긴 했는데 더 효율적인 방법을 찾아야 할것같다.
+( context API ??  component injection ?? 을 공부해서 적용해보기. )
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 반응형 추가하기.
