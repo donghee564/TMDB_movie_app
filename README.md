@@ -1,6 +1,6 @@
 ### TMDb 퍼블릭 API를 활용한 영화, TV 시리즈, 인물 정보 웹.
 데모: https://donghee564.github.io/TMDB_movie_app/#/ <br>
-created with create-react-app<br>
+create-react-app<br>
 BenchMark: TMDb https://www.themoviedb.org/
 
 #### 구조와 기능 요약
