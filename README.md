@@ -28,7 +28,9 @@ BenchMark: TMDb https://www.themoviedb.org/
    - Search (/search)
       * 검색 결과가 나오는 페이지 (영화, TV 시리즈, 인물)
  
-3. Footer
+3. Components
+  - movie-item - 영화, TV 시리즈 포스터(클릭시 내리스트에 저장), rating, like, 자세히 보기 버튼, 내 리스트에 추가 버튼
+  - item-detail-modal - 자세히 보기 클릭시 나오는 아이템에 대한 세부 정보. 개봉일, 시작일, 장르 정보, 아이템 줄거리, 러닝타임(티비시리즈는 에피소드 개수와 에피소드 러닝타임)
 
 #### 사용 라이브러리
  - axios
@@ -36,10 +38,9 @@ BenchMark: TMDb https://www.themoviedb.org/
  - react-bootstrap-icons
  - react-responsive-carousel
 
-#### 개선 해야할 것들
-- Clean up Function? 컴포넌트 언마운트시 memory leak 을 방지하기 위해서 클린업 함수.
+#### 개선 해야할 것들?
 
-- 깃헙 페이지에 배포하기 위하여 HashRouter를 사용하였는데 Type 에러가 뜨고 화면이 안나온다.. (2일 구글링했는데 결국 Typo 였다.) 
+- 깃헙 페이지에 배포하기 위하여 HashRouter를 사용하였는데 Type 에러가 뜨고 화면이 안나온다.. ( import부분 Typo 였다.) 
 
 - 너무 많은 API call 을 하는것 같다.. 종합된 하나의 API call에서 원하는 정보만 추리고싶은데 (현재 미디어 선택, 시간 선택 할때마다 새로운 API를 호출함) 
  하나의 API call 마다 max result가 1페이지 20개의 아이템인거 같다. 뭔가 더 효율적인 방법이 있을듯...?
