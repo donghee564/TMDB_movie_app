@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/TMDB_movie_app/static/css/main.721916a8.chunk.css",
-    "main.js": "/TMDB_movie_app/static/js/main.3d387d4e.chunk.js",
-    "main.js.map": "/TMDB_movie_app/static/js/main.3d387d4e.chunk.js.map",
+    "main.css": "/TMDB_movie_app/static/css/main.1e4acf9b.chunk.css",
+    "main.js": "/TMDB_movie_app/static/js/main.d9f72511.chunk.js",
+    "main.js.map": "/TMDB_movie_app/static/js/main.d9f72511.chunk.js.map",
     "runtime-main.js": "/TMDB_movie_app/static/js/runtime-main.4d8136b8.js",
     "runtime-main.js.map": "/TMDB_movie_app/static/js/runtime-main.4d8136b8.js.map",
     "static/css/2.4ce9e501.chunk.css": "/TMDB_movie_app/static/css/2.4ce9e501.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.b8632816.chunk.js.map": "/TMDB_movie_app/static/js/2.b8632816.chunk.js.map",
     "index.html": "/TMDB_movie_app/index.html",
     "static/css/2.4ce9e501.chunk.css.map": "/TMDB_movie_app/static/css/2.4ce9e501.chunk.css.map",
-    "static/css/main.721916a8.chunk.css.map": "/TMDB_movie_app/static/css/main.721916a8.chunk.css.map",
+    "static/css/main.1e4acf9b.chunk.css.map": "/TMDB_movie_app/static/css/main.1e4acf9b.chunk.css.map",
     "static/js/2.b8632816.chunk.js.LICENSE.txt": "/TMDB_movie_app/static/js/2.b8632816.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4d8136b8.js",
     "static/css/2.4ce9e501.chunk.css",
     "static/js/2.b8632816.chunk.js",
-    "static/css/main.721916a8.chunk.css",
-    "static/js/main.3d387d4e.chunk.js"
+    "static/css/main.1e4acf9b.chunk.css",
+    "static/js/main.d9f72511.chunk.js"
   ]
 }
