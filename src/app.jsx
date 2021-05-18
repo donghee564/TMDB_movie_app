@@ -59,7 +59,7 @@ function App({ tmdb }) {
     showModal === true ? (
       <ItemDetailModal item={itemDetail} handleCloseModal={handleCloseModal} />
     ) : null;
-  //검색
+  //검색 미디어 타입은 멀티 이므로 영화, 티비 시리즈 , 인물 검색 정보가 모두 나온다.
   const handleSearch = useCallback(
     (query) => {
       tmdb

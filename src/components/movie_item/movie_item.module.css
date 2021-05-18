@@ -114,6 +114,7 @@
 }
 
 .caption {
+  cursor: pointer;
   display: block;
   padding: 10px;
   position: absolute;

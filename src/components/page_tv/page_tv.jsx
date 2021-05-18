@@ -41,7 +41,7 @@ function PageTv({ tmdb, handleModal, handleAdd }) {
     setGenre(type);
   };
 
-  const seletectedGenre = () => {
+  const selectedGenre = () => {
     switch (genre) {
       case "액션":
         return actionTv;
@@ -68,7 +68,7 @@ function PageTv({ tmdb, handleModal, handleAdd }) {
           <SubNavTv handleGenreChange={handleGenreChange} />
           <h1 className={styles.title}>{genre}</h1>
           <PageTvList
-            list={seletectedGenre()}
+            list={selectedGenre()}
             handleModal={handleModal}
             handleAdd={handleAdd}
           />

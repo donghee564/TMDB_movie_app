@@ -25,7 +25,7 @@ const MovieItem = ({ movie, handleModal, handleAdd }) => {
           src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
           alt="poster"
         />
-        <div className={styles.caption}>
+        <div className={styles.caption} onClick={handleAddToMyList}>
           <div className={styles.circle}>
             <p className={styles.plus}>
               <Plus size={35} />
