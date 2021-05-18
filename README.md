@@ -38,7 +38,7 @@ BenchMark: TMDb https://www.themoviedb.org/
  - react-bootstrap-icons
  - react-responsive-carousel
 
-#### 개선 해야할 것들?
+#### 추가
 
 - 깃헙 페이지에 배포하기 위하여 HashRouter를 사용하였는데 Type 에러가 뜨고 화면이 안나온다.. ( import부분 Typo 였다.) 
 
