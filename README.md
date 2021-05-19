@@ -1,4 +1,5 @@
 ### TMDb 퍼블릭 API를 활용한 영화, TV 시리즈, 인물 정보 웹.
+-퍼블리싱 100%<br>
 데모: https://donghee564.github.io/TMDB_movie_app/#/ <br>
 create-react-app<br>
 BenchMark: TMDb https://www.themoviedb.org/
@@ -47,5 +48,3 @@ BenchMark: TMDb https://www.themoviedb.org/
 
 - Route 가 많아지고 자식 components 들이 많아 지면서 props 를 전달하는데 어려움이 있다. 일일히 다 전달해주긴 했는데 더 효율적인 방법을 찾아야 할것같다.
 ( context API ??  component injection ?? 을 공부해서 적용해보기. )
-
-- 반응형 추가하기.
