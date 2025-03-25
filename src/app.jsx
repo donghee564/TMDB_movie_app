@@ -12,67 +12,74 @@ import PageSearch from "./components/page_search/page_search";
 import PageTv from "./components/page_tv/page_tv";
 
 function App({ tmdb }) {
-  const [searched, setSearched] = useState([]); //검색 결과
-  const [showModal, setShowModal] = useState(false); //디테일 창 스위치
-  const [itemDetail, setItemDetail] = useState({}); // 클릭된 아이템 정보
-  const [myList, setMyList] = useState([]); // 내 리스트 목록
+  const [searched, setSearched] = useState([]); // 검색 결과를 저장하는 상태
+  const [showModal, setShowModal] = useState(false); // 디테일 창 스위치 상태
+  const [itemDetail, setItemDetail] = useState({}); // 클릭된 아이템 정보를 저장하는 상태
+  const [myList, setMyList] = useState([]); // 내 리스트 목록을 저장하는 상태
 
-  // 자세히 보기 버튼 틀릭시 팝업 모달창
-  // item 제목이 영화는 title TV시리즈는 name 으로 되어있으므로
+  // API를 호출하여 아이템의 상세 정보를 가져오는 함수
+  const fetchDetails = async (media, id) => {
+    try {
+      const result = await tmdb.details(media, id);
+      setItemDetail(result);
+    } catch (error) {
+      console.error("Failed to fetch details:", error);
+    }
+  };
+
+  // 자세히 보기 버튼 클릭 시 팝업 모달창을 여는 함수
+  // item 제목이 영화는 title, TV 시리즈는 name으로 되어 있으므로
   // item.name이 undefined이면 media type을 movie로 전달한다.
   const handleModal = useCallback(
     (item) => {
       setShowModal(true);
-      if (item.name === undefined) {
-        tmdb
-          .details("movie", item.id) //
-          .then((result) => {
-            setItemDetail(result);
-          });
-      } else {
-        tmdb
-          .details("tv", item.id) //
-          .then((result) => {
-            setItemDetail(result);
-          });
-      }
+      const mediaType = item.name === undefined ? "movie" : "tv";
+      fetchDetails(mediaType, item.id);
     },
     [tmdb]
   );
-  // +myList 클릭시 배열에 추가
+
+  // +myList 클릭 시 배열에 아이템을 추가하는 함수
   const handleAdd = (item) => {
     setMyList([...myList, item]);
   };
-  // myList 에서 delete클릭시 배열에서 제거
+
+  // myList에서 delete 클릭 시 배열에서 아이템을 제거하는 함수
   const handleDelete = (item) => {
     const newList = myList.filter((movie) => {
       return movie.id !== item.id;
     });
     setMyList(newList);
   };
-  //디테일 모달창 닫기
+
+  // 디테일 모달창을 닫는 함수
   const handleCloseModal = () => {
     setShowModal(false);
   };
-  //디테일 팝업 모달창
+
+  // 디테일 팝업 모달창을 렌더링하는 변수
   const modal =
     showModal === true ? (
       <ItemDetailModal item={itemDetail} handleCloseModal={handleCloseModal} />
     ) : null;
-  //검색 미디어 타입은 멀티 이므로 영화, 티비 시리즈 , 인물 검색 정보가 모두 나온다.
+
+  // 검색 미디어 타입은 멀티이므로 영화, TV 시리즈, 인물 검색 정보가 모두 나온다.
   const handleSearch = useCallback(
     (query) => {
       tmdb
         .search("multi", query) //
         .then((result) => {
           setSearched(result);
+        })
+        .catch((error) => {
+          console.error("Failed to search:", error);
         });
     },
     [tmdb]
   );
 
   return (
-    <div className={styles.app}>
+    <div className={styles.app} role="main">
       {modal}
       <Nav onSearch={handleSearch} list={myList} />
       <Switch>
