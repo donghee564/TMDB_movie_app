@@ -11,3 +11,74 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+
+/* 접근성 관련 CSS 스타일 - 시각적 디자인 변경 최소화 */
+
+/* 스크린 리더에게만 보이는 텍스트를 위한 클래스 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 스크린 리더에게만 보이지만 포커스를 받으면 시각적으로도 표시되는 요소 */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* 키보드 포커스 상태를 시각적으로 표시 - 기존 디자인과 어울리도록 미묘하게 설정 */
+:focus:not(:focus-visible) {
+  outline: none; /* 마우스 클릭 시에는 아웃라인 제거 */
+}
+
+:focus-visible {
+  outline: 2px solid rgba(74, 144, 226, 0.5); /* 키보드 포커스 시에만 표시되는 미묘한 아웃라인 */
+  outline-offset: 1px;
+}
+
+/* 스킵 내비게이션 링크 - 키보드 사용자가 반복 내비게이션을 건너뛸 수 있게 함 */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background-color: #ffffff;
+  color: #000000;
+  z-index: 1000;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* 애니메이션 감소 설정 지원 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 상호작용 가능한 요소에 적절한 커서 표시 */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+a[role="button"] {
+  cursor: pointer;
+}
