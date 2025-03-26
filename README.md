@@ -1,6 +1,8 @@
 ### TMDb 퍼블릭 API를 활용한 영화, TV 시리즈, 인물 정보 웹.
-#### ⚠️: 데모는 마이크로소프트 Edge에서 확인 가능합니다.!
--퍼블리싱 100%<br>
+~~#### ⚠️: 데모는 마이크로소프트 Edge에서 확인 가능합니다.!~~
+#### 2025.03 Netlify로 호스팅 변경
+
+- 퍼블리싱 100%<br>
 데모: https://donghee564.github.io/TMDB_movie_app/#/ <br>
 create-react-app<br>
 BenchMark: TMDb https://www.themoviedb.org/
