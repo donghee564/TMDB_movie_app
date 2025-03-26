@@ -3,7 +3,7 @@
 #### 2025.03 Netlify로 호스팅 변경
 
 - 퍼블리싱 100%<br>
-데모: https://donghee564.github.io/TMDB_movie_app/#/ <br>
+데모: https://luminous-platypus-424cdb.netlify.app/#/ <br>
 create-react-app<br>
 BenchMark: TMDb https://www.themoviedb.org/
 
