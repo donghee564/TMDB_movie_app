@@ -13,9 +13,9 @@ function Trending({
   handleAdd,
 }) {
   return (
-    <section className={styles.trendingMovies}>
-      <div className={styles.titleWrap}>
-        <h1 className={styles.title}>트랜딩 {title}</h1>
+    <section className={styles.trendingMovies + " section_list"}>
+      <div className={"list_title_wrap"}>
+        <h1 className={"list_title"}>트랜딩 {title}</h1>
         <TimeWindow
           name={title}
           time={time}

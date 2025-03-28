@@ -1,7 +1,7 @@
-@value makerLightGrey, makerGradient from "../../common/colors.css";
-
+@value makerGradient, makerLightGrey from "../../common/colors.css";
 .wrap {
   width: 100%;
+  min-height: 70vh;
 }
 
 .movie {
@@ -13,15 +13,25 @@
 
 .bgLayer {
   width: 100%;
-  min-height: 70vh;
-  background-color: #07070775;
+  /* background-color: #92909021; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.pageTitle {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-top: 30px;
+  color: makerLightGrey;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid makerLightGrey;
+}
+
 .title {
-  width: 1350px;
+  width: 100%;
   margin-top: 30px;
   margin-left: 60px;
   font-weight: normal;

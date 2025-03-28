@@ -5,7 +5,7 @@ import { memo } from "react";
 
 const PageTvList = ({ list, handleModal, handleAdd }) => {
   return (
-    <section className={styles.wrap}>
+    <section className={styles.wrap + " section_list"}>
       <ul className={styles.movies}>
         {list.map((item) => {
           return (

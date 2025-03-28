@@ -18,14 +18,17 @@ function App({ tmdb }) {
   const [myList, setMyList] = useState([]); // 내 리스트 목록을 저장하는 상태
 
   // API를 호출하여 아이템의 상세 정보를 가져오는 함수
-  const fetchDetails = async (media, id) => {
-    try {
-      const result = await tmdb.details(media, id);
-      setItemDetail(result);
-    } catch (error) {
-      console.error("Failed to fetch details:", error);
-    }
-  };
+  const fetchDetails = useCallback(
+    async (media, id) => {
+      try {
+        const result = await tmdb.details(media, id);
+        setItemDetail(result);
+      } catch (error) {
+        console.error("Failed to fetch details:", error);
+      }
+    },
+    [tmdb]
+  );
 
   // 자세히 보기 버튼 클릭 시 팝업 모달창을 여는 함수
   // item 제목이 영화는 title, TV 시리즈는 name으로 되어 있으므로
@@ -36,7 +39,7 @@ function App({ tmdb }) {
       const mediaType = item.name === undefined ? "movie" : "tv";
       fetchDetails(mediaType, item.id);
     },
-    [tmdb]
+    [fetchDetails]
   );
 
   // +myList 클릭 시 배열에 아이템을 추가하는 함수
@@ -82,31 +85,38 @@ function App({ tmdb }) {
     <div className={styles.app} role="main">
       {modal}
       <Nav onSearch={handleSearch} list={myList} />
-      <Switch>
-        <Route exact path="/">
-          <Home tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
-        </Route>
-        <Route path="/search">
-          <PageSearch list={searched} />
-        </Route>
-        <Route path="/movie">
-          <PageMovie
-            tmdb={tmdb}
-            handleModal={handleModal}
-            handleAdd={handleAdd}
-          />
-        </Route>
-        <Route path="/tv">
-          <PageTv tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
-        </Route>
-        <Route path="/my_list">
-          <PageMyList
-            list={myList}
-            handleModal={handleModal}
-            handleDelete={handleDelete}
-          />
-        </Route>
-      </Switch>
+      <div className={styles.container}>
+        <Switch>
+          <Route exact path="/">
+            <Home tmdb={tmdb} handleModal={handleModal} handleAdd={handleAdd} />
+          </Route>
+          <Route path="/search">
+            <PageSearch list={searched} />
+          </Route>
+          <Route path="/movie">
+            <PageMovie
+              tmdb={tmdb}
+              handleModal={handleModal}
+              handleAdd={handleAdd}
+            />
+          </Route>
+          <Route path="/tv">
+            <PageTv
+              tmdb={tmdb}
+              handleModal={handleModal}
+              handleAdd={handleAdd}
+            />
+          </Route>
+          <Route path="/my_list">
+            <PageMyList
+              list={myList}
+              handleModal={handleModal}
+              handleDelete={handleDelete}
+            />
+          </Route>
+        </Switch>
+      </div>
+
       <Footer />
     </div>
   );

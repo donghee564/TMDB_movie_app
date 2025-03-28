@@ -1,3 +1,5 @@
+@value makerGradient from "./common/colors.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -10,4 +12,7 @@ a:visited,
 a:active {
   text-decoration: none;
   color: inherit;
+}
+body {
+  min-width: 1360px;
 }

@@ -9,3 +9,16 @@
 @value makerSecondary: #01b4e4;
 @value makerTertiary: #90cea1;
 @value makerGradient: linear-gradient(to right, #90cea1, #01b4e4);
+
+:root {
+  --maker-red: #e50914;
+  --maker-grey: #757575;
+  --maker-white: #ffffff;
+  --maker-dark-grey: #303030;
+  --maker-black: #111;
+  --maker-light-grey: #acabab;
+  --maker-primary: #0d253f;
+  --maker-secondary: #01b4e4;
+  --maker-tertiary: #90cea1;
+  --maker-gradient: linear-gradient(to right, #90cea1, #01b4e4);
+}

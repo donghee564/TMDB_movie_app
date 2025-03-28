@@ -5,9 +5,9 @@ import CategoriesWindow from "../categories-window/categories-window";
 
 function Popular({ type, list, handleMediaChange, handleModal, handleAdd }) {
   return (
-    <section className={styles.trendingMovies}>
-      <div className={styles.titleWrap}>
-        <h1 className={styles.title}>What's Popular</h1>
+    <section className={styles.trendingMovies + " section_list"}>
+      <div className="list_title_wrap">
+        <h1 className="list_title">What's Popular</h1>
         <CategoriesWindow type={type} handleMediaChange={handleMediaChange} />
       </div>
       <MovieList

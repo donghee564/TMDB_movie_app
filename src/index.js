@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "./common/common.css";
 import App from "./app";
 import Tmdb from "./service/tmdb";
 import { HashRouter } from "react-router-dom";

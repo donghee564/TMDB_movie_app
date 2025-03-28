@@ -72,15 +72,13 @@ function PageMovie({ tmdb, handleModal, handleAdd }) {
       }}
     >
       <div className={styles.movie}>
-        <div className={styles.bgLayer}>
-          <SubNav handleGenreChange={handleGenreChange} />
-          <h1 className={styles.title}>{genre}</h1>
-          <PageMovieList
-            list={seletectedGenre()}
-            handleModal={handleModal}
-            handleAdd={handleAdd}
-          />
-        </div>
+        <SubNav handleGenreChange={handleGenreChange} />
+        <h1 className={styles.title}>{genre}</h1>
+        <PageMovieList
+          list={seletectedGenre()}
+          handleModal={handleModal}
+          handleAdd={handleAdd}
+        />
       </div>
     </section>
   );

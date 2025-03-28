@@ -1,7 +1,8 @@
 @value makerLightGrey, makerPrimary from "../../common/colors.css";
 
 .footer {
-  padding: 50px 0;
+  /* margin-top: 40px; */
+  padding: 40px 0;
   background-color: makerPrimary;
   width: 100%;
   display: flex;

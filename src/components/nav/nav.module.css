@@ -2,15 +2,14 @@
 
 .navWrap {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.178);
-  display: flex;
-  justify-content: center;
+  background-color: rgb(55, 49, 49);
   border-bottom: 1px solid rgba(167, 167, 167, 0.295);
 }
 
 .nav {
-  width: 1320px;
-  padding: 10px 0;
+  width: 1260px;
+  margin: 0 auto;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
